@@ -141,7 +141,8 @@ ul.list_bullet li a:hover { color: #797979 }
 	height: 26px; 
 	padding: 7px; 
 	margin-top: 30px; 
-	background: url(../images/templatemo_topbar.jpg);
+	margin-right:-130px;
+	/*background: url(../images/templatemo_topbar.jpg);*/
 }
 
 #templatemo_search form {

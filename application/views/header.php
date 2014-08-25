@@ -5,6 +5,8 @@
 <title>Secured Theme by templatemo</title>
 <link href="<?php echo base_url();?>css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" />
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js" ></script>
 <script type="text/javascript">
@@ -36,17 +38,27 @@ function clearText(field)
 	<div id="templatemo_header">
     	<div id="site_title"><a href="http://www.templatemo.com/preview/templatemo_376_secured" rel="nofollow">Secured Theme</a></div>
         <div id="templatemo_search">
-            <form action="#" method="get">
-              <input type="text" value="Enter a keyword" name="keyword" id="keyword" title="keyword" 
-              		onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn" />
-            </form>
-            <ul id="social">
-            	<li><a href="#"><img src="images/rss.png" alt="RSS" /></a></li>
-                <li><a href="https://www.facebook.com/templatemo"><img src="images/facebook.png" alt="facebook" /></a></li>
-                <li><a href="#"><img src="images/twitter.png" alt="twitter" /></a></li>
-                <li><a href="#"><img src="images/flickr.png" alt="flickr" /></a></li>
-                <li><a href="#"><img src="images/skype.png" alt="skype" /></a></li>
-			</ul>
+            <a href="#" id="popup_window_login" data-popup-target="#login-popup">Login</a> / <a href="#" id="popup_window_signup" data-popup-target="#signup-popup">Register</a>
         </div>
     </div> <!-- END of header -->
+<div id="login-popup" class="popup">
+    <div class="popup-body">
+		<span class="popup-exit"></span>
+        <div class="popup-content">
+            <h2 class="popup-title">Login</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper nulla et gravida interdum. 
+			Quisque dignissim a turpis at posuere. Praesent cursus turpis magna, quis pulvinar est vehicula</p>
+        </div>
+    </div>
+</div>
+<div id="signup-popup" class="popup">
+    <div class="popup-body">
+		<span class="popup-exit"></span>
+        <div class="popup-content">
+            <h2 class="popup-title">Signup/Registration</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper nulla et gravida interdum. 
+			Quisque dignissim a turpis at posuere. Praesent cursus turpis magna, quis pulvinar est vehicula</p>
+        </div>
+    </div>
+</div>
+<div class="popup-overlay"></div>
