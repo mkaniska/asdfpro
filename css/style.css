@@ -1,9 +1,9 @@
 #featured{ 
 	width:660px; 
-	padding-right:280px; 
+	padding-right:300px; 
 	position:relative; 
-	border:20px solid #1b1414; 
-	height:280px; 
+	border:10px solid #1b1414; 
+	height:260px; 
 	background: #ebebeb;
 }
 #featured ul.ui-tabs-nav{ 
@@ -35,7 +35,7 @@
 	display:block; 
 	padding: 5px 5px;
 	margin: 0;
-	height: 60px; 
+	height: 70px; 
 	color:#333;
 	line-height:20px;
 }
@@ -48,7 +48,7 @@
 #featured ul.ui-tabs-nav li.ui-tabs-selected a{ 
 }
 #featured .ui-tabs-panel{ 
-	width:660px; height:280px; 
+	width:660px; height:260px; 
 	background:#999; position:relative;
 }
 #featured .ui-tabs-panel .info{ 

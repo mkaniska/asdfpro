@@ -91,12 +91,12 @@ ul.list_bullet li a:hover { color: #797979 }
 .content_mb_60 { margin-bottom: 60px }
 
 .col_2 {width:420px;}
-.col_3 {width:260px;}
+.col_3 {width:285px;}
 .col_4 {width:180px;}
 .col_23 {width:580px;}
 .col_34 {width:660px;}
 
-.col_2, .col_3, .col_4, .col_23, .col_34 { float:left; margin: 0 60px 0 0 }
+.col_2, .col_3, .col_4, .col_23, .col_34 { float:left; margin: 0 20px 0 0 }
 
 .col_4 .img_fl { margin-right: 15px }
 .col_4 .text { float: right; display: block; width: 130px }
