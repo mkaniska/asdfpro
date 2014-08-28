@@ -24,6 +24,21 @@ class Welcome extends CI_Controller {
 		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
 		$this->load->view('layouts/layout', $tpl_Data);
 	}
+	public function contactus()
+	{
+		$tpl_Data['page_name'] = "welcome/contactus"; 
+		$tpl_Data['menu'] = "contactus";
+		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
+		$this->load->view('layouts/layout', $tpl_Data);
+	}
+
+	public function aboutus()
+	{
+		$tpl_Data['page_name'] = "welcome/aboutus";
+		$tpl_Data['menu'] = "aboutus";
+		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
+		$this->load->view('layouts/layout', $tpl_Data);
+	}	
 }
 
 /* End of file welcome.php */
