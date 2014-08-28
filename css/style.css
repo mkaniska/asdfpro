@@ -53,9 +53,9 @@
 }
 #featured .ui-tabs-panel .info{ 
 	position:absolute; 
-	top:180px; left:0; 
+	top:190px; left:0; 
 	width: 400px;
-	height:80px; 
+	height:70px; 
 	background: url(../images/transparent-bg.png); 
 }
 #featured .info h2{ 
