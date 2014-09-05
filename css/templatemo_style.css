@@ -92,7 +92,7 @@ ul.list_bullet li a:hover { color: #797979 }
 
 .col_2 {width:420px;}
 .col_3 {width:285px;}
-.col_4 {width:180px;}
+.col_4 {width:190px;}
 .col_23 {width:580px;}
 .col_34 {width:660px;}
 
@@ -333,14 +333,19 @@ ul.rc_comment li span { color: #333 }
 #contact_form form label { display: block; margin-bottom: 5px; }
 
 #contact_form form textarea { 
-	width: 418px; 
+	/*width: 418px; 
 	height: 130px; 
 	padding: 5px; 
 	margin-bottom: 10px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color: #666; 
-	background: #EEEEEE; 
-	border: 1px solid #663333;
+	background: #EEEEEE; */
+	/*border: 1px thick #663333;
+	border:0 none;*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
 }
 
 #contact_form form .submit_btn, #comment_form form .submit_btn { 

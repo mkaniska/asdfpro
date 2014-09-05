@@ -9,11 +9,13 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js" ></script>
+<?php if($page_name=='welcome/home' || $page_name=='') { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
 	});
 </script>
+<?php } ?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
 <script type="text/javascript" src="<?php echo base_url();?>js/ddsmoothmenu.js"></script>
 <script type="text/javascript">
@@ -32,6 +34,15 @@ function clearText(field)
 </script>
 <link rel="stylesheet" href="<?php echo base_url();?>css/slimbox2.css" type="text/css" media="screen" /> 
 <script type="text/JavaScript" src="<?php echo base_url();?>js/slimbox2.js"></script>
+<?php if($page_name=='welcome/contactus') { ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>formValidator/validationEngine.jquery.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/fancyform.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>jqtransformplugin/jquery.jqtransform.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>formValidator/jquery.validationEngine.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>js/fancy_script.js"></script>
+<?php } ?>
 </head>
 <body>
 <div id="templatemo_wrapper">
