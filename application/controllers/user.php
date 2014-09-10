@@ -1,14 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class User extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
 	 */
 	public function index()
 	{
-		$tpl_Data['page_name'] = "welcome/home"; 
-		$tpl_Data['menu'] = "home";
+		$tpl_Data['page_name'] = "user/signup"; 
+		$tpl_Data['menu'] = "signup";
+		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
+		$this->load->view('layouts/layout', $tpl_Data);
+	}
+	public function signup()
+	{
+		$tpl_Data['page_name'] = "user/signup"; 
+		$tpl_Data['menu'] = "signup";
 		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
 		$this->load->view('layouts/layout', $tpl_Data);
 	}
@@ -76,5 +83,5 @@ class Welcome extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file user.php */
+/* Location: ./application/controllers/user.php */
