@@ -9,10 +9,30 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js" ></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <?php if($page_name=='welcome/home' || $page_name=='') { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+		
+		$("#uploadNow").on('click',(function(e) {
+			e.preventDefault();
+			alert('');
+			$.ajax({
+				url: "user/uploadimage",
+				type: "POST",
+				data:  new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
+				success: function(data) {
+					$("#targetLayer").html(data);
+					alert('');
+				},
+				error: function() { }
+		   });
+		}));
+	
 	});
 </script>
 <?php } ?>
@@ -31,6 +51,7 @@ function clearText(field) {
     else if (field.value == '') field.value = field.defaultValue;
 }
 </script>
+
 <link rel="stylesheet" href="<?php echo base_url();?>css/slimbox2.css" type="text/css" media="screen" /> 
 <script type="text/JavaScript" src="<?php echo base_url();?>js/slimbox2.js"></script>
 <?php if($page_name=='welcome/contactus' || $page_name=='user/signup') { ?>

@@ -1,13 +1,11 @@
 <?php
 class CommonModel extends CI_Model {
   
-    public function __construct() 
-    {
+    public function __construct() {
         parent::__construct();
     }
     
     function get_states() {
-	
 		$this->db->order_by("state","ASC");
 		$this->db->select();
 		$query = $this->db->get('uxi_states_list');
@@ -19,7 +17,6 @@ class CommonModel extends CI_Model {
     }
 	
     function get_cities($state='') {
-        
         if($state!=''){$this->db->where('state_id', $state);}
 		$this->db->order_by("city","ASC");
 		$this->db->select();
@@ -38,7 +35,6 @@ class CommonModel extends CI_Model {
 	}
 	
 	function updateData($table, $data, $whereField, $whereValue) {
-	
 		$this->db->where($whereField, $whereValue);
 		$this->db->update($table, $data);
         if($this->db->affected_rows()>0) {
@@ -49,7 +45,6 @@ class CommonModel extends CI_Model {
 	}
 	
 	function deleteData($table, $data, $whereField, $whereValue) {
-	
 		$this->db->where($whereField, $whereValue);
 		$this->db->delete($table, $data);
         if($this->db->affected_rows()>0) {
@@ -57,8 +52,19 @@ class CommonModel extends CI_Model {
 		}else {
 			return false;
 		}
-	}	
+	}
 
+    function getRowDetails($table, $fieldName, $fieldValue) {
+        $this->db->where($fieldName, $fieldValue);
+		$this->db->select();
+        $query = $this->db->get($table);
+        if($query->num_rows() > 0) {
+            return $query->row();
+        }else {
+            return '';
+        }
+    }
+	
 }
 
 ?>

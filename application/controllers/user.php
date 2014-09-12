@@ -19,22 +19,10 @@ class User extends CI_Controller {
 		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
 		$this->load->view('layouts/layout', $tpl_Data);
 	}
-	public function contactus()
-	{
-		$_n1 = rand(1,20);
-		$_n2 = rand(1,20);
-		$_expect = $_n1+$_n2;
-		$captchas = array('display' => $_n1.'+'.$_n2,'expected'=>$_expect);
-		$this->session->set_userdata($captchas);
-		$tpl_Data['page_name'] = "welcome/contactus"; 
-		$tpl_Data['menu'] = "contactus";
-		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
-		$this->load->view('layouts/layout', $tpl_Data);
-	}
 
-	public function process_contact() {
+	public function process_signup() {
 	
-		if($this->input->post('doContact')=='Submit') {
+		if($this->input->post('doSignup')=='Submit') {
 			$name 		= $this->input->post('name');
 			$email 		= $this->input->post('email');
 			$phone 		= $this->input->post('phone');
@@ -42,7 +30,7 @@ class User extends CI_Controller {
 			$message 	= $this->input->post('message');
 			if($this->session->userdata('expected')!=$this->input->post('captcha')){
 				$this->session->set_flashdata('flash_message', 'Invalid Captcha Entered!');
-				redirect('welcome/contactus');
+				redirect('welcome/signup');
 			}
 			$config['protocol'] = 'mail';
 			$config['wordwrap'] = FALSE;
@@ -64,23 +52,36 @@ class User extends CI_Controller {
 			$email_template = $this->load->view('templates/contact_us_email', $email_data, true);
 			if($this->config->item('is_email_enabled')) {
 				$this->email->message($email_template);
-				$this->email->send();				
+				$this->email->send();
+				$data['contact_name'] = $name;
+				$data['contact_email'] = $email;
+				$data['contact_phone'] = $phone;
+				$data['inquiry_subject'] = $subject;
+				$data['inquiry_message'] = $message;
+				$data['inquiry_date'] = time();
+				$this->CommonModel->insertData('uxi_contact_inquiry',$data);
 			}
 			$this->session->set_flashdata('flash_message', 'Successfully Sent your details !');
 			redirect('welcome/thanks');
 		} else {
 			$this->session->set_flashdata('flash_message', 'Please enter all the details');
-			redirect('welcome/contactus/error/1');
+			redirect('welcome/signup/error/1');
 		}
 	}
-	
-	public function aboutus()
+
+	public function uploadimage()
 	{
-		$tpl_Data['page_name'] = "welcome/aboutus";
-		$tpl_Data['menu'] = "aboutus";
-		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
-		$this->load->view('layouts/layout', $tpl_Data);
-	}
+		if(is_array($_FILES)) {
+			if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
+				$sourcePath = $_FILES['userImage']['tmp_name'];
+				$ext = pathinfo($_FILES['userImage']['name'], PATHINFO_EXTENSION);
+				$targetPath = base_url()."images/".time().'.'.$ext;
+				if(move_uploaded_file($sourcePath,$targetPath)) {
+					echo '<img src="'.$targetPath.'" width="100px" height="100px" />';
+				}
+			}
+		}exit;
+	}	
 }
 
 /* End of file user.php */
