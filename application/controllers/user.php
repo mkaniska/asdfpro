@@ -14,6 +14,12 @@ class User extends CI_Controller {
 	}
 	public function signup()
 	{
+		$_n1 = rand(1,20);
+		$_n2 = rand(1,20);
+		$_expect = $_n1+$_n2;
+		$captchas = array('display' => $_n1.'+'.$_n2,'expected'=>$_expect);
+		$this->session->set_userdata($captchas);
+		
 		$tpl_Data['page_name'] = "user/signup"; 
 		$tpl_Data['menu'] = "signup";
 		$tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
@@ -43,7 +49,7 @@ class User extends CI_Controller {
 			$this->email->to('murugdev.eee@gmail.com');
 			$this->email->subject('Inquiry Notification - '.$subject);
 			$email_data['HelloTo'] 		= 'Admin';
-			$email_data['ToMessage'] 	= $message;			
+			$email_data['ToMessage'] 	= $message;
 			$temp_str ="Subject : ".$subject." <br />";
 			$temp_str.="Full Name : ".$name." <br />";
 			$temp_str.="Email Address : ".$email." <br />";
@@ -75,13 +81,18 @@ class User extends CI_Controller {
 			if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
 				$sourcePath = $_FILES['userImage']['tmp_name'];
 				$ext = pathinfo($_FILES['userImage']['name'], PATHINFO_EXTENSION);
-				$targetPath = base_url()."images/".time().'.'.$ext;
+				$targetPath = "upload_images/".time().'.'.$ext;
 				if(move_uploaded_file($sourcePath,$targetPath)) {
-					echo '<img src="'.$targetPath.'" width="100px" height="100px" />';
+					if($this->session->userdata('_recent_picture')!='') {
+						unlink($this->session->userdata('_recent_picture'));
+					}
+					$picture = array('_recent_picture' => $targetPath);
+					$this->session->set_userdata($picture);				
+					echo '<img src="'.base_url().$targetPath.'" width="100px" height="100px" />';
 				}
 			}
 		}exit;
-	}	
+	}
 }
 
 /* End of file user.php */

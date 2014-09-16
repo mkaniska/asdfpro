@@ -6,33 +6,14 @@
 <link href="<?php echo base_url();?>css/site_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" />
-<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js" ></script>
-<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js" ></script>
-<script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js" ></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery.form.js"></script>
 <?php if($page_name=='welcome/home' || $page_name=='') { ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
-		
-		$("#uploadNow").on('click',(function(e) {
-			e.preventDefault();
-			alert('');
-			$.ajax({
-				url: "user/uploadimage",
-				type: "POST",
-				data:  new FormData(this),
-				contentType: false,
-				cache: false,
-				processData:false,
-				success: function(data) {
-					$("#targetLayer").html(data);
-					alert('');
-				},
-				error: function() { }
-		   });
-		}));
-	
 	});
 </script>
 <?php } ?>
@@ -63,6 +44,22 @@ function clearText(field) {
 	<!-- <script type="text/javascript" src="<?php echo base_url();?>formValidator/jquery.validationEngine.js"></script>-->
 	<script type="text/javascript" src="<?php echo base_url();?>js/fancy_script.js"></script>
 <?php } ?>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery.form.js"></script>
+<script type="text/javascript" >
+	$(document).ready(function() {
+		$('#userImage').live('change', function() {
+			$("#view").html('');
+			$("#view").html('<img src="http://localhost/asdfpro/images/loading.gif" />');
+			$("#contact-form").ajaxForm({
+				target: '#view'
+			}).submit();
+			$("#userImage").hide();
+			$("#userImageLabel").html('Click here to upload different image');
+			$("#userImageLabel").css({'color':'#ff0000'});
+		});
+	});
+</script>
 </head>
 <body>
 <div id="templatemo_wrapper">
