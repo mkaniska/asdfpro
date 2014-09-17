@@ -27,7 +27,6 @@ class User extends CI_Controller {
 	}
 
 	public function process_signup() {
-	
 		if($this->input->post('doSignup')=='Submit') {
 			$name 		= $this->input->post('name');
 			$email 		= $this->input->post('email');
@@ -81,7 +80,8 @@ class User extends CI_Controller {
 			if(is_uploaded_file($_FILES['userImage']['tmp_name'])) {
 				$sourcePath = $_FILES['userImage']['tmp_name'];
 				$ext = pathinfo($_FILES['userImage']['name'], PATHINFO_EXTENSION);
-				$targetPath = "upload_images/".time().'.'.$ext;
+				$targetFileName = time().'.'.$ext;
+				$targetPath = "upload_images/".$targetFileName;
 				if(move_uploaded_file($sourcePath,$targetPath)) {
 					if($this->session->userdata('_recent_picture')!='') {
 						unlink($this->session->userdata('_recent_picture'));
@@ -89,6 +89,7 @@ class User extends CI_Controller {
 					$picture = array('_recent_picture' => $targetPath);
 					$this->session->set_userdata($picture);				
 					echo '<img src="'.base_url().$targetPath.'" width="100px" height="100px" />';
+					echo '<input type="hidden" value="'.$targetFileName.'" name="" id="" />';
 				}
 			}
 		}exit;

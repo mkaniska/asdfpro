@@ -6,18 +6,13 @@
 <link href="<?php echo base_url();?>css/site_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" />
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
+
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.form.js"></script>
-<?php if($page_name=='welcome/home' || $page_name=='') { ?>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
-	});
-</script>
-<?php } ?>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
 <script type="text/javascript" src="<?php echo base_url();?>js/ddsmoothmenu.js"></script>
 <script type="text/javascript">
 ddsmoothmenu.init({
@@ -33,8 +28,14 @@ function clearText(field) {
 }
 </script>
 
-<link rel="stylesheet" href="<?php echo base_url();?>css/slimbox2.css" type="text/css" media="screen" /> 
-<script type="text/JavaScript" src="<?php echo base_url();?>js/slimbox2.js"></script>
+<?php if($page_name=='welcome/home' || $page_name=='') { ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+	});
+</script>
+<?php } ?>
+
 <?php if($page_name=='welcome/contactus' || $page_name=='user/signup') { ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
 	<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>formValidator/validationEngine.jquery.css" /> -->
@@ -60,6 +61,10 @@ function clearText(field) {
 		});
 	});
 </script>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/init.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/check.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/custom.css" />
 </head>
 <body>
 <div id="templatemo_wrapper">

@@ -5,11 +5,14 @@
 		<form id="contact-form" enctype="multipart/form-data" name="contact-form" method="post" action="<?php echo base_url();?>user/uploadimage">
 		  <table width="100%" border="0" cellspacing="0" cellpadding="5">
 			<tr>
+			  <td class="formError" id="errorMessage" colspan="6"></td>						  
+			</tr>			
+			<tr>
 			  <td width="10%"><label for="first_name">First Name</label></td>
-			  <td width="30%"><input type="text" class="validate[required,custom[onlyLetter]]" name="first_name" id="first_name" value="" /></td>
+			  <td width="30%"><input type="text" name="first_name" id="first_name" value="" /></td>
 			  <td width="10%" id="errOffset">&nbsp;</td>
 			  <td width="10%"><label for="last_name">Last Name</label></td>
-			  <td width="30%"><input type="text" class="validate[required,custom[onlyLetter]]" name="last_name" id="last_name" value="" /></td>
+			  <td width="30%"><input type="text" name="last_name" id="last_name" value="" /></td>
 			  <td width="10%" id="errOffset">&nbsp;</td>						  
 			</tr>
 			<tr>
@@ -22,10 +25,10 @@
 			</tr>
 			<tr>
 			  <td><label for="password">Password</label></td>
-			  <td><input type="text" name="password" id="password" value="" /></td>
+			  <td><input type="password" name="password" id="password" value="" /></td>
 			  <td>&nbsp;</td>
 			  <td><label for="repassword">Re-Type Password</label></td>
-			  <td><input type="text" name="repassword" id="repassword" value="" /></td>
+			  <td><input type="password" name="repassword" id="repassword" value="" /></td>
 			  <td>&nbsp;</td>
 			</tr>
 			<tr>
@@ -81,10 +84,9 @@
 			  <td>&nbsp;</td>
 			</tr>
 			<tr>
-			  <td><label for="captcha">Enter the answer</label></td>
+			  <td><label for="captcha">What is <?php echo $this->session->userdata('display');?> ?</label></td>
 			  <td>
 				<input type="text" name="captcha" id="captcha" />
-				&nbsp;<span style="font-size:12px;padding-top:5px;"><?php echo $this->session->userdata('display');?> ?</span>
 			  </td>
 			  <td valign="top">&nbsp;</td>
 			  <td valign="top">&nbsp;</td>
@@ -94,9 +96,8 @@
 			</tr>
 			<tr>
 			  <td colspan="6" style="text-align:center;">
-				<input type="hidden" value="signup" name="submitfor" id="submitfor" />
 				<input type="button" name="doRegister" id="doRegister" value="Submit" />
-				<input type="reset" name="button2" id="button2" value="Reset" />					  
+				<input type="reset" name="doReset" id="doReset" value="Reset" />					  
 			  </td>
 			</tr>
 		  </table>
