@@ -1,3 +1,4 @@
+<?php $data_restore = $this->session->flashdata('refill_data'); ?>
 <div id="templatemo_main">
 	<h2>Sign Up !</h2>
 	<div id="contact_form" class="col_2_new">
@@ -9,26 +10,38 @@
 			</tr>			
 			<tr>
 			  <td width="10%"><label for="first_name">First Name</label></td>
-			  <td width="30%"><input type="text" name="first_name" id="first_name" value="" /></td>
+			  <td width="30%">
+                              <input type="text" name="first_name" id="first_name" value="<?php echo $data_restore['user_firstname'];?>" />
+                          </td>
 			  <td width="10%" id="errOffset">&nbsp;</td>
 			  <td width="10%"><label for="last_name">Last Name</label></td>
-			  <td width="30%"><input type="text" name="last_name" id="last_name" value="" /></td>
+			  <td width="30%">
+                              <input type="text" name="last_name" id="last_name" value="<?php echo $data_restore['user_lastname'];?>" />
+                          </td>
 			  <td width="10%" id="errOffset">&nbsp;</td>						  
 			</tr>
 			<tr>
 			  <td><label for="email">Email</label></td>
-			  <td><input type="text" name="email" id="email" value="" /></td>
+			  <td>
+                              <input type="text" name="email" id="email" value="<?php echo $data_restore['user_email'];?>" />
+                          </td>
 			  <td>&nbsp;</td>
 			  <td><label for="phone">Phone</label></td>
-			  <td><input type="text" name="phone" id="phone" value="" /></td>
+			  <td>
+                              <input type="text" name="phone" id="phone" value="<?php echo $data_restore['user_phone'];?>" />
+                          </td>
 			  <td>&nbsp;</td>
 			</tr>
 			<tr>
 			  <td><label for="password">Password</label></td>
-			  <td><input type="password" name="password" id="password" value="" /></td>
+			  <td>
+                              <input type="password" name="password" id="password" value="" />
+                          </td>
 			  <td>&nbsp;</td>
 			  <td><label for="repassword">Re-Type Password</label></td>
-			  <td><input type="password" name="repassword" id="repassword" value="" /></td>
+			  <td>
+                              <input type="password" name="repassword" id="repassword" value="" />
+                          </td>
 			  <td>&nbsp;</td>
 			</tr>
 			<tr>
@@ -36,13 +49,13 @@
 			  <td>
 				  <input type="radio" name="gender" id="gender" value="Male" checked="checked" /> 
 				  <label for="gender">Male</label>
-				  <input type="radio" name="gender" id="gender" value="Female" /> 
+                                  <input type="radio" name="gender" id="gender" value="Female" <?php if($data_restore['user_gender']=='Female'){?> checked="checked"<?php }?> /> 
 				  <label for="gender">Female</label>
 			  </td>
 			  <td>&nbsp;</td>
 			  <td><label for="address">Address</label></td>
 			  <td>
-				<input type="text" name="address" id="address" value="" />
+				<input type="text" name="address" id="address" value="<?php echo $data_restore['user_address'];?>" />
 			  </td>
 			  <td>&nbsp;</td>
 			</tr>
@@ -74,7 +87,7 @@
 			<tr>
 			  <td><label for="zipcode">Zipcode</label></td>
 			  <td>
-				  <input type="text" name="zipcode" id="zipcode" value="" />
+				<input type="text" name="zipcode" id="zipcode" value="<?php echo $data_restore['user_zipcode'];?>" />
 			  </td>
 			  <td>&nbsp;</td>
 			  <td><label for="userImage" id="userImageLabel">Upload Picture</label></td>

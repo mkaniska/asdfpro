@@ -19,6 +19,8 @@ $config['base_url']	= 'http://localhost/asdfpro/';
 
 define('SITE_TITLE', 'Application Front End');
 
+$config['is_email_enabled'] = false;
+
 /*
 |--------------------------------------------------------------------------
 | Index File

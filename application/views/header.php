@@ -5,8 +5,7 @@
 <title><?php echo $title;?></title>
 <link href="<?php echo base_url();?>css/site_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" />
-
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" /> -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
 
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
@@ -16,11 +15,11 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/ddsmoothmenu.js"></script>
 <script type="text/javascript">
 ddsmoothmenu.init({
-	mainmenuid: "templatemo_menu", //menu DIV id
-	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-	classname: 'ddsmoothmenu', //class added to menu's outer DIV
-	//customtheme: ["#1c5a80", "#18374a"],
-	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    mainmenuid: "templatemo_menu", //menu DIV id
+    orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+    classname: 'ddsmoothmenu', //class added to menu's outer DIV
+    //customtheme: ["#1c5a80", "#18374a"],
+    contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 function clearText(field) {
     if (field.defaultValue == field.value) field.value = '';
@@ -30,59 +29,47 @@ function clearText(field) {
 
 <?php if($page_name=='welcome/home' || $page_name=='') { ?>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
-	});
+    $(document).ready(function(){
+        $("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
+    });
 </script>
 <?php } ?>
 
 <?php if($page_name=='welcome/contactus' || $page_name=='user/signup') { ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>formValidator/validationEngine.jquery.css" /> -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/fancyform.css" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>jqtransformplugin/jquery.jqtransform.js"></script>
-	<!-- <script type="text/javascript" src="<?php echo base_url();?>formValidator/jquery.validationEngine.js"></script>-->
-	<script type="text/javascript" src="<?php echo base_url();?>js/fancy_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/fancyform.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>jqtransformplugin/jquery.jqtransform.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/fancy_script.js"></script>
 <?php } ?>
 
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.form.js"></script>
 <script type="text/javascript" >
-	$(document).ready(function() {
-		$('#userImage').live('change', function() {
-			$("#view").html('');
-			$("#view").html('<img src="http://localhost/asdfpro/images/loading.gif" />');
-			$("#contact-form").ajaxForm({
-				target: '#view'
-			}).submit();
-			$("#userImage").hide();
-			$("#userImageLabel").html('Click here to upload different image');
-			$("#userImageLabel").css({'color':'#ff0000'});
-		});
-	});
+    $(document).ready(function() {
+        $('#userImage').live('change', function() {
+            $("#view").html('');
+            $("#view").html('<img src="http://localhost/asdfpro/images/loading.gif" />');
+            $("#contact-form").ajaxForm({
+                    target: '#view'
+            }).submit();
+            $("#userImage").hide();
+            $("#userImageLabel").html('Click here to upload different image');
+            $("#userImageLabel").css({'color':'#ff0000'});
+        });
+    });
 </script>
 
 <script type="text/javascript" src="<?php echo base_url();?>js/init.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/check.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/custom.css" />
+
 </head>
 <body>
 <div id="templatemo_wrapper">
-	<div id="templatemo_header">
-    	<div id="site_title"><a href="http://www.templatemo.com/preview/templatemo_376_secured" rel="nofollow">Secured Theme</a></div>
+    <div id="templatemo_header">
+        <div id="site_title"><a href="#" rel="nofollow">Secured Theme</a></div>
         <div id="templatemo_search">
-            <a href="#" id="popup_window_login" style="color:#771300;" data-popup-target="#login-popup">Login</a> / 
-			<a href="<?php echo base_url();?>user/signup" style="color:#771300;" id="popup_window_signup">Register</a>
+            <a href="#" id="loginbtn" style="color:#771300;" data-popup-target="#login-popup">Login</a> / 
+            <a href="<?php echo base_url();?>user/signup" style="color:#771300;" id="popup_window_signup">Register</a>
         </div>
-    </div> <!-- END of header -->
-<div id="login-popup" class="popup">
-    <div class="popup-body">
-		<span class="popup-exit"></span>
-        <div class="popup-content">
-            <h2 class="popup-title">Login</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper nulla et gravida interdum. 
-			Quisque dignissim a turpis at posuere. Praesent cursus turpis magna, quis pulvinar est vehicula</p>
-        </div>
-    </div>
-</div>
-<div class="popup-overlay"></div>
+    </div> <!-- END of header -->   
