@@ -8,6 +8,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" /> -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
 
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-ui.min.js"></script>
@@ -35,7 +36,7 @@ function clearText(field) {
 </script>
 <?php } ?>
 
-<?php if($page_name=='welcome/contactus' || $page_name=='user/signup') { ?>
+<?php if($page_name=='welcome/contactus' || $page_name=='user/signup' || $page_name=='user/login') { ?>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/fancyform.css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -62,14 +63,17 @@ function clearText(field) {
 <script type="text/javascript" src="<?php echo base_url();?>js/init.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/check.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/custom.css" />
-
 </head>
 <body>
 <div id="templatemo_wrapper">
     <div id="templatemo_header">
         <div id="site_title"><a href="#" rel="nofollow">Secured Theme</a></div>
         <div id="templatemo_search">
-            <a href="#" id="loginbtn" style="color:#771300;" data-popup-target="#login-popup">Login</a> / 
-            <a href="<?php echo base_url();?>user/signup" style="color:#771300;" id="popup_window_signup">Register</a>
+            <?php if($this->session->userdata('_user_id')=='') { ?>
+            <a href="<?php echo base_url();?>user/login" id="loginButton" style="color:#771300;font-size: 11px;"><span>LOGIN</span><em></em></a> / 
+            <a href="<?php echo base_url();?>user/signup" style="color:#771300;font-size: 11px;" id="popup_window_signup">SIGNUP</a>
+            <?php }else { ?>
+            Welcome <?php echo $this->session->userdata('_user_name');?>
+            <?php } ?>
         </div>
-    </div> <!-- END of header -->   
+    </div> <!-- END of header -->

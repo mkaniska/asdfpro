@@ -5,6 +5,12 @@ class User extends CI_Controller {
 	/**
 	 * Index Page for this controller.
 	 */
+        function __construct() {
+            parent::__construct();
+            $this->load->model('UserModel'); 
+            $this->load->model('CommonModel');
+        }    
+        
 	public function index()
 	{
             $tpl_Data['page_name'] = "user/signup"; 
@@ -12,6 +18,7 @@ class User extends CI_Controller {
             $tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
             $this->load->view('layouts/layout', $tpl_Data);
 	}
+        
 	public function signup()
 	{
             $_n1 = rand(1,20);
@@ -21,17 +28,42 @@ class User extends CI_Controller {
             $this->session->set_userdata($captchas);
             $tblVals = array('user_firstname'=>'','user_lastname'=>'','user_email'=>'','user_phone'=>'',
                              'user_password'=>'','user_gender'=>'','user_address'=>'','user_state'=>'',
-                             'user_city'=>'','user_zipcode'=>'','user_picture'=>'');
+                             'user_city'=>'','user_zipcode'=>'','user_picture'=>'','user_type'=>'');
             $this->session->set_flashdata('refill_data', $tblVals);
+            $tpl_Data['states'] = $this->CommonModel->get_states();
+            $tpl_Data['cities'] = $this->CommonModel->get_cities();
             $tpl_Data['page_name'] = "user/signup"; 
             $tpl_Data['menu'] = "signup";
-            $tpl_Data['title'] = SITE_TITLE." :: Welcome to CodeIgniter Sample";
+            $tpl_Data['title'] = SITE_TITLE." :: Register with CodeIgniter Sample";
             $this->load->view('layouts/layout', $tpl_Data);
 	}
 
-	public function process_signup() {
-	
-            if($this->input->post()!='') {
+	public function profile()
+	{
+            //if($this->session->userdata('_user_id')!=''){redirect('user/login');}
+            $tpl_Data['info'] = $this->CommonModel->getRowDetails('uxi_users', 'user_id', $this->session->userdata('_user_id'));
+            if($this->session->userdata('_user_type')=='tutor'){
+                $tpl_Data['page_name'] = "user/tprofile";
+            }else{
+                $tpl_Data['page_name'] = "user/sprofile";
+            }
+            $tpl_Data['menu'] = "profile";
+            $tpl_Data['title'] = SITE_TITLE." :: Profile Details";
+            $this->load->view('layouts/layout', $tpl_Data);
+	}
+        
+	public function login()
+	{
+            $tpl_Data['page_name'] = "user/login"; 
+            $tpl_Data['menu'] = "login";
+            $tpl_Data['title'] = SITE_TITLE." :: Login";
+            $this->load->view('layouts/layout', $tpl_Data);
+	}
+
+	public function process_signup()
+        {
+            if(1) {
+                $tableValues['user_type']       = $this->input->post('user_type');
                 $tableValues['user_firstname']  = $this->input->post('first_name');
                 $tableValues['user_lastname']   = $this->input->post('last_name');
                 $tableValues['user_email']      = $this->input->post('email');
@@ -57,11 +89,8 @@ class User extends CI_Controller {
                     $this->session->set_flashdata('refill_data', $tableValues);
                     redirect('user/signup');                    
                 }else {
-                    
-                    $isValidID = $this->UserModel->insertData('uxi_users',$tableValues);
-                
+                    $isValidID = $this->CommonModel->insertData('uxi_users',$tableValues);
                     if($isValidID>0) {
-
                         $this->load->helper('common');
                         $activation_link = base_url().'user/activate/';
                         $activation_link.= encryptData(array('email'=>$tableValues['user_email'],'id'=>$isValidID));
@@ -98,6 +127,24 @@ class User extends CI_Controller {
             }
 	}
 
+	public function process_login() {
+
+            $tableValues['user_name']  = mysql_real_escape_string($this->input->post('user_name'));
+            $tableValues['password']   = mysql_real_escape_string($this->input->post('password'));
+            $userInfo = $this->UserModel->isValidLogin('uxi_users',$tableValues);
+            if($userInfo!='') {
+                $users_data = array('_user_id'  => $userInfo->user_id,
+                                    '_user_type'=> $userInfo->user_type,
+                                    '_user_name'=> $userInfo->user_firstname.' '.$output->user_lastname
+                                   );
+                $this->session->set_userdata($users_data);
+                redirect('user/profile');
+            }else {
+                $this->session->set_flashdata('flash_message', 'Invalid Login Details provided!.');
+                redirect('user/login');
+            }
+	}
+        
 	public function activate() {
             $this->load->helper('common');
             $string = ($this->uri->segment(3))? $this->uri->segment(3) : 0;	
@@ -122,7 +169,7 @@ class User extends CI_Controller {
                     $targetPath = "upload_images/".$targetFileName;
                     if(move_uploaded_file($sourcePath,$targetPath)) {
                         if($this->session->userdata('_recent_picture')!='') {
-                                unlink($this->session->userdata('_recent_picture'));
+                            unlink($this->session->userdata('_recent_picture'));
                         }
                         $picture = array('_recent_picture' => $targetPath);
                         $this->session->set_userdata($picture);				

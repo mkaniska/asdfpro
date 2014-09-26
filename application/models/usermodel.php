@@ -6,13 +6,13 @@ class UserModel extends CI_Model {
     }
 	
     function isValidLogin($table, $data) {
-        $this->db->select('user_id'); 
-        $this->db->where('user_email', $data['username']);
+        $this->db->select('user_id,user_firstname,user_lastname,user_type'); 
+        $this->db->where('user_email', $data['user_name']);
         $this->db->where('user_password', $data['password']);
         $this->db->where('user_active_status', '1');
         $query = $this->db->get($table);
         if($query->num_rows() > 0) {
-            return $query->row();  
+            return $query->row();
         }else {
             return '';
         }

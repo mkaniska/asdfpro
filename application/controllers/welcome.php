@@ -5,6 +5,11 @@ class Welcome extends CI_Controller {
 	/**
 	 * Index Page for this controller.
 	 */
+        function __construct() {
+            parent::__construct();
+            $this->load->model('UserModel'); 
+            $this->load->model('CommonModel');
+        } 
 	public function index()
 	{
 		$tpl_Data['page_name'] = "welcome/home"; 
@@ -66,7 +71,21 @@ class Welcome extends CI_Controller {
 			redirect('welcome/contactus/error/1');
 		}
 	}
-	
+        
+	public function listcities()
+	{
+            $statename = $this->input->post('state_name');
+            $citylist = $this->CommonModel->get_cities(trim($statename));
+            /*
+                $Str = '<select name="city" id="city">';
+                foreach($citylist as $value) {
+                   $Str.= '<option value="'.$value->city.'">'.$value->city.'</option>';
+                }
+                $Str.= '</select>';
+            */
+            echo json_encode($citylist);exit;
+	}
+        
 	public function aboutus()
 	{
 		$tpl_Data['page_name'] = "welcome/aboutus";
