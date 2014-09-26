@@ -1,6 +1,5 @@
 // Signup Form Validation
 function validateRegistration() {
-    var formObj = {};
     var inputs = $("form").serializeArray();
     var isAllFine = true;
     $.each(inputs, function (i, input) {
@@ -17,7 +16,6 @@ function validateRegistration() {
 
 // Login Form Validation
 function validateLogin() {
-    var formObj = {};
     var inputs = $("form").serializeArray();
     var isAllFine = true;
     $.each(inputs, function (i, input) {

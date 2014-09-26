@@ -26,25 +26,43 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><label for="email">Phone</label></td>
+                      <td><label for="phone">Phone</label></td>
                       <td>
                           <?php echo $info->user_phone;?>
                       </td>
                     </tr>
                     <tr>
-                      <td><label for="email">Address</label></td>
+                      <td><label for="institute">Institute</label></td>
+                      <td>
+                          <?php echo $info->student_institute;?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="skills">Sills</label></td>
+                      <td>
+                          <?php echo $info->student_skills;?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="status">Current Status</label></td>
+                      <td>
+                          <?php echo $info->student_current_study_status;?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><label for="address">Address</label></td>
                       <td>
                           <?php echo $info->user_address;?>
                       </td>
                     </tr>
                     <tr>
-                      <td><label for="email">City, Zip code & State</label></td>
+                      <td><label for="city">City, Zip code & State</label></td>
                       <td>
                           <?php echo $info->user_city.','.$info->user_zipcode.' & '.$info->user_state;?>
                       </td>
                     </tr>
                     <tr>
-                      <td><label for="email">Last Login</label></td>
+                      <td><label for="lastlogin">Last Login</label></td>
                       <td>
                           <?php echo date("d,M 'y h:i A",$info->user_last_login);?>
                       </td>

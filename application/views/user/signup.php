@@ -2,9 +2,9 @@
 <div id="templatemo_main">
 	<h2>Sign Up !</h2>
 	<div id="contact_form" class="col_2_new">
-		<div id="form-container" style="margin-left:20px;">
+		<div id="form-container" style="margin-left:15px;">
 		<form id="contact-form" enctype="multipart/form-data" name="contact-form" method="post" action="<?php echo base_url();?>user/uploadimage">
-		  <table width="100%" border="0" cellspacing="0" cellpadding="5" style="margin-left:20px;">
+		  <table width="100%" border="0" cellspacing="0" cellpadding="5" style="margin-left:10px;">
 			<tr>
                             <td class="formError" id="errorMessage" colspan="6">
                                 <?php if($this->session->flashdata('flash_message') !='') { ?>
@@ -100,10 +100,9 @@
 			  </td>
 			  <td>&nbsp;</td>
 			  <td><label for="userImage" id="userImageLabel">Upload Picture</label></td>
-			  <td>
+			  <td colspan='2'>
 				<input name="userImage" id="userImage" type="file" />
 			  </td>
-			  <td>&nbsp;</td>
 			</tr>
 			<tr>
 			  <td><label for="captcha">What is <?php echo $this->session->userdata('display');?> ?</label></td>

@@ -41,16 +41,31 @@ class User extends CI_Controller {
 	public function profile()
 	{
             //if($this->session->userdata('_user_id')!=''){redirect('user/login');}
-            $tpl_Data['info'] = $this->CommonModel->getRowDetails('uxi_users', 'user_id', $this->session->userdata('_user_id'));
-            if($this->session->userdata('_user_type')=='tutor'){
-                $tpl_Data['page_name'] = "user/tprofile";
-            }else{
-                $tpl_Data['page_name'] = "user/sprofile";
-            }
+            $tpl_Data['info'] = $this->UserModel->getUserDetails();
+            $userType = $this->session->userdata('_user_type');
+            $tpl_Data['page_name'] = "user/".$userType."_profile";
             $tpl_Data['menu'] = "profile";
             $tpl_Data['title'] = SITE_TITLE." :: Profile Details";
             $this->load->view('layouts/layout', $tpl_Data);
 	}
+
+	public function process_signup()
+        {
+            $userType = $this->session->userdata('_user_type');
+            if($userType=='tutor') {
+                $tableValues['user_firstname']  = $this->input->post('first_name');
+                $tableValues['user_lastname']   = $this->input->post('last_name');
+                $tableValues['user_email']      = $this->input->post('email');
+                $tableValues['user_phone']      = $this->input->post('phone');
+                $tableValues['user_password']   = $this->input->post('password');
+                $tableValues['user_gender']     = $this->input->post('gender');
+                $tableValues['user_address']    = $this->input->post('address');
+                $tableValues['user_state']      = $this->input->post('state');
+                $tableValues['user_city']       = $this->input->post('city');
+                $tableValues['user_zipcode']    = $this->input->post('zipcode');
+                $tableValues['user_picture']    = $this->input->post('userpicture');
+            }
+        }
         
 	public function login()
 	{
@@ -102,7 +117,7 @@ class User extends CI_Controller {
                         $mconfig['newline'] = "\r\n";
                         $this->load->library('email',$mconfig);
                         $this->email->from('murugdev.eee@gmail.com', 'Murugesan P');
-                        $this->email->to($this->input->post('email_address'));
+                        $this->email->to($this->input->post('email'));
                         $this->email->subject(SITE_TITLE.' - Email Verification');
 
                         $email_data['HelloTo']      = $tableValues['user_firstname'].' '.$tableValues['user_lastname'];

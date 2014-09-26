@@ -50,9 +50,7 @@ function clearText(field) {
         $('#userImage').live('change', function() {
             $("#view").html('');
             $("#view").html('<img src="http://localhost/asdfpro/images/loading.gif" />');
-            $("#contact-form").ajaxForm({
-                    target: '#view'
-            }).submit();
+            $("#contact-form").ajaxForm({target:'#view'}).submit();
             $("#userImage").hide();
             $("#userImageLabel").html('Click here to upload different image');
             $("#userImageLabel").css({'color':'#ff0000'});

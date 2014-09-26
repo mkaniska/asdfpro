@@ -51,6 +51,19 @@ class UserModel extends CI_Model {
         }else {
             return false;
         }
+    }
+    
+    function getUserDetails() {
+        $userType = $this->session->userdata('_user_type');
+        $userId = $this->session->userdata('_user_id');
+        $joinTable = "uxi_".$userType."_details";
+        $sqlQuery = "SELECT u.*,d.* FROM uxi_users u LEFT JOIN $joinTable d ON d.user_id = u.user_id WHERE u.user_id='$userId'";
+        $query = $this->db->query($sqlQuery);
+        if($query->num_rows() > 0) {
+            return $query->row();
+        }else {
+            return '';
+        }
     }    
 }
 
