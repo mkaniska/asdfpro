@@ -1,4 +1,4 @@
-    <div id="templatemo_main">
+    <div id="vision_main">
 		<div class="content_wrapper content_mb_60">
             <div class="col_2">
                 <h2>Nam Imperdiet Aliquam</h2>
@@ -78,4 +78,4 @@
             <div class="clear"></div>
         </div>  
         <div class="clear"></div>
-    </div> <!-- END of templatemo_main -->
+    </div> <!-- END of vision_main -->

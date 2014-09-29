@@ -1,5 +1,5 @@
-    <div id="templatemo_main">
-        <div id="templatemo_content" class="left">
+    <div id="vision_main">
+        <div id="vision_content" class="left">
             <div class="post">
                 <img src="<?php echo base_url();?>images/news/01.jpg" alt="image 1" class="img_fl img_border img_border_b" />
                 <div>Posted by <a href="#">Walter</a> in <a href="#">Technology</a></div>
@@ -9,7 +9,7 @@
                 <p align="justify">Vestibulum at lorem ac lectus rhoncus aliquet eget ac mauris. Proin nec nunc magna, eu blandit massa. Sed elementum nisi ut quam vehicula eu egestas nisi varius. <a href="#">Aenean semper</a> convallis mi eu congue. In vel neque orci. Nunc vitae luctus ligula. Etiam vulputate semper lorem quis gravida. Donec nec aliquam ipsum.</p>
 			</div>            
 		</div>
-        <div id="templatemo_sidebar" class="right">
+        <div id="vision_sidebar" class="right">
        		<div class="sidebar_section">
                 <h3>Categories</h3>
                 <ul class="nobullet sidebar_link">
@@ -33,4 +33,4 @@
         	</div>		
         </div>
         <div class="clear"></div>
-    </div> <!-- END of templatemo_main -->
+    </div> <!-- END of vision_main -->

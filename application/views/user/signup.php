@@ -1,5 +1,5 @@
 <?php $data_restore = $this->session->flashdata('refill_data'); ?>
-<div id="templatemo_main">
+<div id="vision_main">
 	<h2>Sign Up !</h2>
 	<div id="contact_form" class="col_2_new">
 		<div id="form-container" style="margin-left:15px;">

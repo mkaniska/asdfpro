@@ -1,4 +1,4 @@
-<div id="templatemo_main">
+<div id="vision_main">
     <h3>Profile Details</h3>
         <div id="contact_form" class="col_2">
             <div id="form-container">
@@ -76,4 +76,4 @@
               </table>
         </div>
     <div class="clear"></div>
-</div> <!-- END of templatemo_main -->
+</div> <!-- END of vision_main -->

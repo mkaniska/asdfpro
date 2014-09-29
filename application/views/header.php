@@ -5,7 +5,6 @@
 <title><?php echo $title;?></title>
 <link href="<?php echo base_url();?>css/site_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" />
-<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/popups.css" /> -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/ddsmoothmenu.css" />
 
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -16,7 +15,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/ddsmoothmenu.js"></script>
 <script type="text/javascript">
 ddsmoothmenu.init({
-    mainmenuid: "templatemo_menu", //menu DIV id
+    mainmenuid: "vision_menu", //menu DIV id
     orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
     classname: 'ddsmoothmenu', //class added to menu's outer DIV
     //customtheme: ["#1c5a80", "#18374a"],
@@ -63,10 +62,10 @@ function clearText(field) {
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/custom.css" />
 </head>
 <body>
-<div id="templatemo_wrapper">
-    <div id="templatemo_header">
+<div id="vision_wrapper">
+    <div id="vision_header">
         <div id="site_title"><a href="#" rel="nofollow">Secured Theme</a></div>
-        <div id="templatemo_search">
+        <div id="vision_search">
             <?php if($this->session->userdata('_user_id')=='') { ?>
             <a href="<?php echo base_url();?>user/login" id="loginButton" style="color:#771300;font-size: 11px;"><span>LOGIN</span><em></em></a> / 
             <a href="<?php echo base_url();?>user/signup" style="color:#771300;font-size: 11px;" id="popup_window_signup">SIGNUP</a>

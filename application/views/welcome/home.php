@@ -1,5 +1,5 @@
 <?php $this->load->view('slider'); ?>
-<div id="templatemo_main">
+<div id="vision_main">
 	<div class="content_wrapper content_mb_30">
 		<div class="col_3 service_home">
 			<img src="<?php echo base_url();?>images/teacher.png" alt="Image" />

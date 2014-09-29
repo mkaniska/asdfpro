@@ -1,4 +1,4 @@
-	<div id="templatemo_footer">
+	<div id="vision_footer">
     	<div class="col_4">
         	<h4>Pages</h4>
             <ul class="nobullet bottom_list">
@@ -38,11 +38,11 @@
             <a href="#">Follow us on Twitter</a>
         </div>
         <div class="clear"></div>
-    </div> <!-- END of templatemo_footer -->
-</div> <!-- END of templatemo_wrapper -->
-<div id="templatemo_copyright_wrapper">
-    <div id="templatemo_copyright">
-        Copyright © 2072 <a href="#">Company Name</a> | <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_376_secured">Secured Theme</a> by <a rel="nofollow" href="http://www.templatemo.com">Free Templates</a>
+    </div> <!-- END of vision_footer -->
+</div> <!-- END of vision_wrapper -->
+<div id="vision_copyright_wrapper">
+    <div id="vision_copyright">
+        Copyright © 2072 <a href="#">Company Name</a> | <a rel="nofollow" href="http://www.templatemo.com/preview/vision_376_secured">Secured Theme</a> by <a rel="nofollow" href="http://www.templatemo.com">Free Templates</a>
     </div>
 </div>
 </body>

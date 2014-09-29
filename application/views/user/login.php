@@ -1,4 +1,4 @@
-<div id="templatemo_main">
+<div id="vision_main">
 	<h2>Login !</h2>
 	<div id="contact_form" class="col_2_new">
             <div id="form-container" style="margin-left:40px;background-color:#F2D0CB;">

@@ -1,4 +1,4 @@
-<div id="templatemo_menu" class="ddsmoothmenu">
+<div id="vision_menu" class="ddsmoothmenu">
 	<ul>
 		<li><a href="<?php echo base_url();?>" <?php if($menu=='home'){?> class="selected" <?php }?>>Home</a></li>
 		<li><a href="<?php echo base_url();?>tutor/ourtutors" <?php if($menu=='ourtutors'){?> class="selected" <?php }?>>Our Tutors</a>
@@ -17,5 +17,5 @@
 		</li>
 	</ul>
 	<br style="clear: left" />
-</div> <!-- end of templatemo_menu -->	
+</div> <!-- end of vision_menu -->	
 	

@@ -1,4 +1,4 @@
-    <div id="templatemo_main">
+    <div id="vision_main">
 			<h2>Contact Us</h2>
             <div id="contact_form" class="col_2">
 					<div id="form-container">
@@ -72,4 +72,4 @@
                 </div>
             </div>
         <div class="clear"></div>
-    </div> <!-- END of templatemo_main -->
+    </div> <!-- END of vision_main -->

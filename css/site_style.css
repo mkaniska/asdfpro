@@ -6,7 +6,7 @@ body {
 	font-size: 12px;
 	line-height: 18px; 
 	background-color: #771201; 
-	background-image: url(../images/templatemo_body.jpg);
+	background-image: url(../images/vision_body.jpg);
 	background-repeat: repeat-x;
 	background-position: top;
 }
@@ -66,7 +66,7 @@ a.more {
 	height: 24px; 
 	line-height: 24px; 
 	text-align: center; 
-	background: url(../images/templatemo_more.png);
+	background: url(../images/vision_more.png);
 }
 
 ul.nobullet { margin: 0; padding: 0; list-style: none }
@@ -78,7 +78,7 @@ ul.list_bullet li {
 	color:#797979; 
 	margin: 0 0 7px 0; 
 	padding: 0 0 0 20px; 
-	background: url(../images/templatemo_bullet.png) no-repeat scroll 0 5px;
+	background: url(../images/vision_bullet.png) no-repeat scroll 0 5px;
 }
 
 ul.list_bullet li a { color: #797979; font-weight: normal; text-decoration: none }
@@ -109,53 +109,53 @@ ul.list_bullet li a:hover { color: #797979 }
 .no_margin_right {margin-right:0 !important;}
 .margin_bottom { margin-bottom: 30px }
 
-#templatemo_wrapper {
+#vision_wrapper {
 	width: 980px;
 	margin: 0 auto;
 	padding: 0 10px;
 }
-#templatemo_header {
+#vision_header {
 	height: 80px;
 	margin-bottom: 30px;
 }
-#templatemo_slider {
+#vision_slider {
 	clear: both;
 	background: #1b1414
 }
 
-#templatemo_menu { width: 980px; height: 40px; background:url(../images/templatemo_menu.jpg) }
+#vision_menu { width: 980px; height: 40px; background:url(../images/vision_menu.jpg) }
 
-#templatemo_main { clear: both; margin: 0; padding: 15px 40px; background: #ffffff }
-#templatemo_content { width: 580px }
-#templatemo_sidebar { width: 260px }
+#vision_main { clear: both; margin: 0; padding: 15px 40px; background: #ffffff }
+#vision_content { width: 580px }
+#vision_sidebar { width: 260px }
 
-#templatemo_footer {
+#vision_footer {
 	width: 900px;
 	margin: 0 auto;
 	padding: 40px;
-	background: url(../images/templatemo_footer.jpg) center top no-repeat
+	background: url(../images/vision_footer.jpg) center top no-repeat
 }
 
-#templatemo_search { 
+#vision_search { 
 	float: right; 
 	width: 300px; 
 	height: 26px; 
 	padding: 7px; 
 	margin-top: 30px; 
 	margin-right:-130px;
-	/*background: url(../images/templatemo_topbar.jpg);*/
+	/*background: url(../images/vision_topbar.jpg);*/
 }
 
-#templatemo_search form {
+#vision_search form {
 	float: left;
 	width: 274px;
 	height: 26px;
 	margin: 0;
 	padding: 0;
-	background: url(../images/templatemo_search.jpg)
+	background: url(../images/vision_search.jpg)
 }
 
-#templatemo_search .txt_field {
+#vision_search .txt_field {
 	float: left;
 	display: block;
 	height: 20px;
@@ -169,7 +169,7 @@ ul.list_bullet li a:hover { color: #797979 }
 	background: none;
 }
 
-#templatemo_search .sub_btn {
+#vision_search .sub_btn {
 	float: right;
 	display: block;
 	height: 26px;
@@ -179,8 +179,8 @@ ul.list_bullet li a:hover { color: #797979 }
 	background: none;	
 }
 
-#templatemo_search #social { float: right; margin: 0; padding: 0; list-style: none }
-#templatemo_search #social li { margin: 0 0 0 5px; padding: 0; display: block; float: left }
+#vision_search #social { float: right; margin: 0; padding: 0; list-style: none }
+#vision_search #social li { margin: 0 0 0 5px; padding: 0; display: block; float: left }
 
 #site_title { float: left; margin: 30px 0 0 0 }
 #site_title a { 
@@ -191,7 +191,7 @@ ul.list_bullet li a:hover { color: #797979 }
 	height: 60px; 
 	color: #acacac; 
 	text-indent: -10000px; 
-	background: url(../images/templatemo_logo.png) no-repeat center center }
+	background: url(../images/vision_logo.png) no-repeat center center }
 
 .service_home { text-align: center }
 .service_home img { margin-bottom: 10px }
@@ -258,7 +258,7 @@ ul.latest_work_home li img { padding: 9px; border: 1px solid #ccc; display: bloc
 .post_list h2 { font-size: 12px; font-weight: 700; line-height: 18px; margin-bottom: 10px }
 
 
-.post { clear: both; margin: 0 0 40px 0; padding: 0 0 40px 0; background: url(../images/templatemo_hr_divider.png) repeat-x bottom }
+.post { clear: both; margin: 0 0 40px 0; padding: 0 0 40px 0; background: url(../images/vision_hr_divider.png) repeat-x bottom }
 .post h2 { margin-bottom: 30px }
 .post p { margin-bottom: 15px }
 
@@ -303,7 +303,7 @@ ul.latest_work_home li img { padding: 9px; border: 1px solid #ccc; display: bloc
 }
 
 /* sidebar */
-#templatemo_sidebar {}
+#vision_sidebar {}
 
 .sidebar_section {
 	padding: 10px;
@@ -358,18 +358,18 @@ ul.rc_comment li span { color: #333 }
 	border: 1px solid #663333;
 }
 
-#templatemo_footer { color: #bd918a; font-size: 11px; }
-#templatemo_footer a { color: #bd918a }
-#templatemo_footer h4 { color: #fff; font-size: 14px; font-weight: 700 }
+#vision_footer { color: #bd918a; font-size: 11px; }
+#vision_footer a { color: #bd918a }
+#vision_footer h4 { color: #fff; font-size: 14px; font-weight: 700 }
 
-#templatemo_copyright_wrapper { 
+#vision_copyright_wrapper { 
 	clear: both; 
 	width: 100%; 
 	height: 46px; 
-	background: url(../images/templatemo_copyright.jpg) repeat-x;
+	background: url(../images/vision_copyright.jpg) repeat-x;
 }
 
-#templatemo_copyright { 
+#vision_copyright { 
 	margin: 0 auto; 
 	width: 900px; 
 	height: 46px; 
@@ -377,16 +377,16 @@ ul.rc_comment li span { color: #333 }
 	text-align: center; 
 	color: #966a63; 
 	font-size: 11px;
-	background: url(../images/templatemo_copyright.png) center;
+	background: url(../images/vision_copyright.png) center;
 }
 
-#templatemo_copyright a { color: #966a63 }
+#vision_copyright a { color: #966a63 }
 
-.templatemo_paging { margin: 0 0 20px; padding: 0 }
-.templatemo_paging ul { margin: 0; padding: 0; list-style: none }
-.templatemo_paging ul li { margin: 0; padding: 0; display: inline }
+.vision_paging { margin: 0 0 20px; padding: 0 }
+.vision_paging ul { margin: 0; padding: 0; list-style: none }
+.vision_paging ul li { margin: 0; padding: 0; display: inline }
 
-.templatemo_paging ul li a { 
+.vision_paging ul li a { 
 	float: left; 
 	display: block; 
 	color: #666; 
@@ -397,7 +397,7 @@ ul.rc_comment li span { color: #333 }
 	border: 1px solid #dddddc;
 }
 
-.templatemo_paging ul li a:hover {
+.vision_paging ul li a:hover {
 	background: #771201; 
 	border: 1px solid #5f0e00; 
 	color: #fff 

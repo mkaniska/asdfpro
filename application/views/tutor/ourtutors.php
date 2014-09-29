@@ -1,4 +1,4 @@
-<div id="templatemo_main">
+<div id="vision_main">
 	<h2>Our Tutors</h2>
 	
 	<div class="post_list col_4">
@@ -73,7 +73,7 @@
 		<div class="clear"></div>
 	</div>	
 	<div class="clear"></div>
-	<div class="templatemo_paging">
+	<div class="vision_paging">
 			<ul>
 				<li><a href="#">Previous</a></li>
 				<li><a href="#">1</a></li>
@@ -89,4 +89,4 @@
 	<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
-</div> <!-- END of templatemo_main -->
+</div> <!-- END of vision_main -->

@@ -1,4 +1,4 @@
-<div id="templatemo_main">
+<div id="vision_main">
     <h3>Profile Details</h3>
         <div id="contact_form" class="col_2">
             <div id="form-container">

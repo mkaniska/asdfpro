@@ -49,7 +49,7 @@ class User extends CI_Controller {
             $this->load->view('layouts/layout', $tpl_Data);
 	}
 
-	public function process_signup()
+	public function updateprofile()
         {
             $userType = $this->session->userdata('_user_type');
             if($userType=='tutor') {
