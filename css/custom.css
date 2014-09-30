@@ -4,3 +4,12 @@
 	text-transform:capitalize;
         font-size:11px;
 }
+
+.formButtons{
+	background-color: transparent;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	font-family: Arial;
+	margin:25px;
+	padding:10px;
+}

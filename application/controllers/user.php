@@ -5,11 +5,11 @@ class User extends CI_Controller {
 	/**
 	 * Index Page for this controller.
 	 */
-        function __construct() {
-            parent::__construct();
-            $this->load->model('UserModel'); 
-            $this->load->model('CommonModel');
-        }    
+	function __construct() {
+		parent::__construct();
+		$this->load->model('UserModel'); 
+		$this->load->model('CommonModel');
+	}
         
 	public function index()
 	{
@@ -40,7 +40,7 @@ class User extends CI_Controller {
 
 	public function profile()
 	{
-            //if($this->session->userdata('_user_id')!=''){redirect('user/login');}
+            if($this->session->userdata('_user_id')==''){redirect('user/login');}
             $tpl_Data['info'] = $this->UserModel->getUserDetails();
             $userType = $this->session->userdata('_user_type');
             $tpl_Data['page_name'] = "user/".$userType."_profile";
@@ -50,23 +50,45 @@ class User extends CI_Controller {
 	}
 
 	public function updateprofile()
-        {
+	{
+		$userType = $this->session->userdata('_user_type');
+		$tableValues['user_phone']      = $this->input->post('phone');
+		$tableValues['user_password']   = $this->input->post('password');
+		$tableValues['user_password']   = $this->input->post('repassword');
+		
+		$tableValues['user_gender']     = $this->input->post('gender');
+		$tableValues['user_address']    = $this->input->post('address');
+		$tableValues['user_state']      = $this->input->post('state');
+		$tableValues['user_city']       = $this->input->post('city');
+		$tableValues['user_zipcode']    = $this->input->post('zipcode');
+		$tableValues['user_zipcode']    = $this->input->post('zipcode');
+			
+		if($userType=='tutor') {
+			$tableValues['tutor_current_work_status'] = $this->input->post('work_status');
+			$tableValues['tutor_skills'] = $this->input->post('skills');
+			$tableValues['tutor_institute'] = $this->input->post('institute');
+			$tableValues['tutor_experience'] = $this->input->post('experience');
+		}else{
+			$tableValues['student_current_study_status'] = $this->input->post('work_status');
+			$tableValues['tutor_skills'] = $this->input->post('skills');
+			$tableValues['student_institute'] = $this->input->post('institute');
+			$tableValues['student_qualification'] = $this->input->post('experience');		
+		}
+	}
+	
+	public function editprofile()
+	{
+            if($this->session->userdata('_user_id')==''){redirect('user/login');}
+            $tpl_Data['info'] = $this->UserModel->getUserDetails();
             $userType = $this->session->userdata('_user_type');
-            if($userType=='tutor') {
-                $tableValues['user_firstname']  = $this->input->post('first_name');
-                $tableValues['user_lastname']   = $this->input->post('last_name');
-                $tableValues['user_email']      = $this->input->post('email');
-                $tableValues['user_phone']      = $this->input->post('phone');
-                $tableValues['user_password']   = $this->input->post('password');
-                $tableValues['user_gender']     = $this->input->post('gender');
-                $tableValues['user_address']    = $this->input->post('address');
-                $tableValues['user_state']      = $this->input->post('state');
-                $tableValues['user_city']       = $this->input->post('city');
-                $tableValues['user_zipcode']    = $this->input->post('zipcode');
-                $tableValues['user_picture']    = $this->input->post('userpicture');
-            }
-        }
-        
+            $tpl_Data['states'] = $this->CommonModel->get_states();
+            $tpl_Data['cities'] = $this->CommonModel->get_cities();			
+            $tpl_Data['page_name'] = "user/edit_".$userType."_profile";
+            $tpl_Data['menu'] = "editprofile";
+            $tpl_Data['title'] = SITE_TITLE." :: Edit Profile";
+            $this->load->view('layouts/layout', $tpl_Data);
+	}
+	
 	public function login()
 	{
             $tpl_Data['page_name'] = "user/login"; 
@@ -150,7 +172,7 @@ class User extends CI_Controller {
             if($userInfo!='') {
                 $users_data = array('_user_id'  => $userInfo->user_id,
                                     '_user_type'=> $userInfo->user_type,
-                                    '_user_name'=> $userInfo->user_firstname.' '.$output->user_lastname
+                                    '_user_name'=> $userInfo->user_firstname.' '.$userInfo->user_lastname
                                    );
                 $this->session->set_userdata($users_data);
                 redirect('user/profile');
@@ -194,6 +216,13 @@ class User extends CI_Controller {
                 }
             }exit;
 	}
+
+	public function logout() {
+		$sessdata = array('_user_id' => '', '_user_type' => '', '_user_name' => '');
+		$this->session->unset_userdata($sessdata);
+		$this->session->set_flashdata('flash_message', 'Successfully Logged out !..');
+		redirect('user/login');
+	}	
 }
 
 /* End of file user.php */

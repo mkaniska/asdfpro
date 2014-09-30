@@ -35,7 +35,7 @@ function clearText(field) {
 </script>
 <?php } ?>
 
-<?php if($page_name=='welcome/contactus' || $page_name=='user/signup' || $page_name=='user/login') { ?>
+<?php if($page_name=='welcome/contactus' || $page_name=='user/signup' || $page_name=='user/login' || $menu=='editprofile') { ?>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>jqtransformplugin/jqtransform.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/fancyform.css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -70,7 +70,8 @@ function clearText(field) {
             <a href="<?php echo base_url();?>user/login" id="loginButton" style="color:#771300;font-size: 11px;"><span>LOGIN</span><em></em></a> / 
             <a href="<?php echo base_url();?>user/signup" style="color:#771300;font-size: 11px;" id="popup_window_signup">SIGNUP</a>
             <?php }else { ?>
-            Welcome <?php echo $this->session->userdata('_user_name');?>
+            Welcome <?php echo $this->session->userdata('_user_name');?> &nbsp; 
+			<a href="<?php echo base_url();?>user/logout" style="color:#771300;font-size: 11px;">Logout</a>
             <?php } ?>
         </div>
     </div> <!-- END of header -->
