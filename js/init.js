@@ -25,5 +25,8 @@ $(document).ready(function() {
         var isFine = validateProfile();
         if(isFine){$('#contact-form').submit();}
     });	
-    //setInterval(function(){yourownfunction()}, 5000);
+    $("#searchTutors").click(function() {
+        $(location).attr('href', siteURL+'/tutor/search');
+    });	
+	//setInterval(function(){yourownfunction()}, 5000);
 });

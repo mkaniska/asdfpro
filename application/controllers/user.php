@@ -21,6 +21,7 @@ class User extends CI_Controller {
         
 	public function signup()
 	{
+		if($this->session->userdata('_user_id')!=''){redirect('user/profile');}
 		$_n1 = rand(1,20);
 		$_n2 = rand(1,20);
 		$_expect = $_n1+$_n2;

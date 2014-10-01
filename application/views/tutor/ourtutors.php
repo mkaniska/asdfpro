@@ -1,6 +1,9 @@
 <div id="vision_main">
 	<h2>Our Tutors</h2>
-	
+	<div style="float:right;margin-top:-90px;">
+		<input type="button" class="formButtons" name="searchTutors" id="searchTutors" value="Search for Tutors" />
+		<img src="<?php echo base_url();?>images/finding.png" align="absmiddle" />
+	</div>
 	<div class="post_list col_4">
 		<a href="<?php echo base_url();?>tutor/details"><img src="<?php echo base_url();?>images/news/01.jpg" alt="image 1" class="img_border img_border_b img_nom" /></a>
 		<strong>21 October 2072</strong>

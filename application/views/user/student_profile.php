@@ -1,16 +1,11 @@
 <div id="vision_main">
-    <h3>Profile Information</h3>
+    <h3><?php echo $info->user_firstname.' '.$info->user_lastname;?></h3>
         <div id="contact_form" class="cols_2_left">
             <div id="form-container">
               <table width="100%" border="0" cellspacing="0" cellpadding="5">
                     <tr>
                         <td width="100%" colspan="2" style="text-align: left;">
                           <img src="<?php echo base_url();?>upload_images/<?php echo $info->user_picture;?>" height="150" width="150" />
-						</td>
-                    </tr>
-                    <tr>
-                        <td width="100%" colspan="2" style="text-align: left;color:#95200C;">
-                          <?php echo $info->user_firstname.' '.$info->user_lastname;?>
 						</td>
                     </tr>
                     <tr>
@@ -22,7 +17,7 @@
             </div>
         </div> 
         <div class="cols_2 no_margin_right">
-            <table width="100%" border="1" cellspacing="0" cellpadding="3">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3">
 				<tr>
 				  <td width="50%">Email</td>
 				  <td width="50%">

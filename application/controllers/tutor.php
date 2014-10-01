@@ -17,14 +17,12 @@ class Tutor extends CI_Controller {
 						  "title"=>SITE_TITLE." :: List of our Tutors");
 		$this->load->view('layouts/layout', $tpl_Data);
 	}
-
 	public function details() {
 		$tpl_Data = array("page_name"=>"tutor/details",
 						  "menu"=>"details",
 						  "title"=>SITE_TITLE." :: Tutor Details");
 		$this->load->view('layouts/layout', $tpl_Data);
 	}
-	
 	public function subjects() {
 		$tpl_Data = array("page_name"=>"tutor/subjects",
 						  "menu"=>"subjects",
