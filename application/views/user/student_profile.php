@@ -1,6 +1,6 @@
 <div id="vision_main">
     <h3>Profile Information</h3>
-        <div id="contact_form" class="cols_2">
+        <div id="contact_form" class="cols_2_left">
             <div id="form-container">
               <table width="100%" border="0" cellspacing="0" cellpadding="5">
                     <tr>
@@ -22,67 +22,67 @@
             </div>
         </div> 
         <div class="cols_2 no_margin_right">
-            <table width="100%" border="0" cellspacing="0" cellpadding="5">
-                    <tr>
-                      <td width="40%"><label for="email">Email</label></td>
-                      <td width="60%">
-                        <?php echo $info->user_email;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="experience">Qualification</label></td>
-                      <td>
-                        <?php echo $info->student_qualification;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="skills">Sills</label></td>
-                      <td>
-                        <?php echo $info->student_skills;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="status">Current Status</label></td>
-                      <td>
-                        <?php echo $info-> 	student_current_study_status;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="institute">Institution</label></td>
-                      <td>
-                        <?php echo $info->student_institute;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="phone">Phone</label></td>
-                      <td>
-                          <?php echo $info->user_phone;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="address">Address</label></td>
-                      <td>
-                          <?php echo $info->user_address;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="city">City</label></td>
-                      <td>
-                          <?php echo $info->user_city;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="city">Zip code & State</label></td>
-                      <td>
-                          <?php echo $info->user_zipcode.' & '.$info->user_state;?>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><label for="lastlogin">Last Login</label></td>
-                      <td>
-                          <?php echo date("d,M 'y h:i A",$info->user_last_login);?>
-                      </td>
-                    </tr>
+            <table width="100%" border="1" cellspacing="0" cellpadding="3">
+				<tr>
+				  <td width="50%">Email</td>
+				  <td width="50%">
+					<?php echo $info->user_email;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Qualification</td>
+				  <td>
+					<?php echo $info->student_qualification;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Sills</td>
+				  <td>
+					<?php echo $info->student_skills;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Current Status</td>
+				  <td>
+					<?php echo $info-> 	student_current_study_status;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Institution</td>
+				  <td>
+					<?php echo $info->student_institute;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Phone</td>
+				  <td>
+					  <?php echo $info->user_phone;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Address</td>
+				  <td>
+					  <?php echo $info->user_address;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>City</td>
+				  <td>
+					  <?php echo $info->user_city;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Zip code & State</td>
+				  <td>
+					  <?php echo $info->user_zipcode.' & '.$info->user_state;?>
+				  </td>
+				</tr>
+				<tr>
+				  <td>Last Login</td>
+				  <td>
+					  <?php echo date("d,M 'y h:i A",$info->user_last_login);?>
+				  </td>
+				</tr>
               </table>
         </div>
     <div class="clear"></div>

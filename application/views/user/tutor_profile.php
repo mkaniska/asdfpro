@@ -1,6 +1,6 @@
 <div id="vision_main">
     <h3>Profile Information</h3>
-        <div id="contact_form" class="cols_2">
+        <div id="contact_form" class="cols_2_left">
             <div id="form-container">
               <table width="100%" border="0" cellspacing="0" cellpadding="5">
                     <tr>
@@ -22,7 +22,7 @@
             </div>
         </div> 
         <div class="cols_2 no_margin_right">
-            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <table width="100%" border="1" cellspacing="0" cellpadding="5">
                     <tr>
                       <td width="40%"><label for="email">Email</label></td>
                       <td width="60%">

@@ -99,8 +99,9 @@ ul.list_bullet li a:hover { color: #797979 }
 
 .col_2, .col_3, .col_4, .col_23, .col_34 { float:left; margin: 0 20px 0 0 }
 
-.cols_2 {width:280px;}
-.cols_2, .col_3, .col_4, .col_23, .col_34 { float:left; margin: 0 20px 0 0 }
+.cols_2 {width:420px;}
+.cols_2_left {width:300px;float:left;}
+.cols_2, .col_3, .col_4, .col_23, .col_34 { float:left; margin: 0 10px 0 0 }
 
 .col_4 .img_fl { margin-right: 15px }
 .col_4 .text { float: right; display: block; width: 130px }
